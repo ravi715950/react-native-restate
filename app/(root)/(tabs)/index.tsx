@@ -1,7 +1,10 @@
+import { useGlobalContext } from "@/lib/global-provider";
 import { Link } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function Index() {
+  const { user } = useGlobalContext();
+
   return (
     <View
       style={{
@@ -11,7 +14,7 @@ export default function Index() {
       }}
     >
       <Text className="text-3xl font-bold font-rubik mb-10 text-danger">
-        Welcome to Restate
+        Welcome {user?.name || "User"}
       </Text>
       <Link href="/sign-in">Sign In</Link>
       <Link href="/explore">Explore</Link>
