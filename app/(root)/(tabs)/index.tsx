@@ -11,7 +11,9 @@ import {
   Text,
   TouchableOpacity,
   View,
+    Button
 } from "react-native";
+import seed from "@/lib/seed";
 
 export default function Index() {
   const { user } = useGlobalContext();
@@ -19,6 +21,7 @@ export default function Index() {
   return (
     <SafeAreaView className="bg-white h-full">
       <ScrollView showsVerticalScrollIndicator={false}>
+      <Button title="Seed" onPress={seed} />
         <View className="px-5 pb-20">
           <View className="flex flex-row items-center justify-between mt-5">
             <View className="flex flex-row">
