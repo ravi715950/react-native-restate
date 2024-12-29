@@ -114,7 +114,7 @@ async function seed() {
           COLLECTIONS.REVIEWS!,
           ID.unique(),
           {
-            reviewerName: `Reviewer ${i}`,
+            name: `Reviewer ${i}`,
             avatar: reviewImages[Math.floor(Math.random() * reviewImages.length)],
             review: `This is a review by Reviewer ${i}.`,
             rating: Math.floor(Math.random() * 5) + 1, // Rating between 1 and 5
@@ -163,7 +163,7 @@ async function seed() {
           COLLECTIONS.PROPERTY!,
           ID.unique(),
           {
-            propertyName: `Property ${i}`,
+            name: `Property ${i}`,
             type: propertyTypes[Math.floor(Math.random() * propertyTypes.length)],
             description: `This is the description for Property ${i}.`,
             address: `123 Property Street, City ${i}`,
@@ -174,7 +174,7 @@ async function seed() {
             bathrooms: Math.floor(Math.random() * 5) + 1,
             rating: Math.floor(Math.random() * 5) + 1,
             facilities: selectedFacilities,
-            propertyImage: image,
+            image: image,
             agent: assignedAgent.$id,
             reviews: assignedReviews.map((review) => review.$id),
             // gallery: assignedGalleries.map((gallery) => gallery.$id),
